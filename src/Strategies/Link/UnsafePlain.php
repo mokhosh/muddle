@@ -4,7 +4,7 @@ namespace Mokhosh\Muddle\Strategies\Link;
 
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 
-class UnsafeLink implements LinkStrategy
+class UnsafePlain implements LinkStrategy
 {
     public function muddle(string $string): string
     {

@@ -1,13 +1,13 @@
 <?php
 
 use Mokhosh\Muddle\Muddle;
-use Mokhosh\Muddle\Strategies\Link\UnsafeLink;
-use Mokhosh\Muddle\Strategies\Text\UnsafeText;
+use Mokhosh\Muddle\Strategies\Link\UnsafePlain;
+use Mokhosh\Muddle\Strategies\Text\UnsafePlain;
 
 it('works with basic unsafe strategies', function () {
     $muddle = new Muddle(
-        text: new UnsafeText,
-        link: new UnsafeLink,
+        text: new UnsafePlain,
+        link: new UnsafePlain,
     );
 
     expect($muddle->text('test@example.com'))
