@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Config;
 use Mokhosh\Muddle\Facades\Muddle;
-use Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Strategies\Link;
+use Mokhosh\Muddle\Strategies\Text;
 
 it('works with basic unsafe strategies', function () {
     expect(Muddle::text('test@example.com'))

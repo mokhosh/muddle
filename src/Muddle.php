@@ -25,8 +25,7 @@ class Muddle
     public function strategy(
         ?TextStrategy $text = null,
         ?LinkStrategy $link = null,
-    ): static
-    {
+    ): static {
         $this->text = $text ?? $this->text;
         $this->link = $link ?? $this->link;
 

@@ -1,8 +1,8 @@
 <?php
 
 use Mokhosh\Muddle\Muddle;
-use Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Strategies\Link;
+use Mokhosh\Muddle\Strategies\Text;
 
 it('works with basic unsafe strategies', function () {
     $muddle = new Muddle(

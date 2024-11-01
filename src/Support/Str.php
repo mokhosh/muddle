@@ -8,7 +8,7 @@ class Str
     {
         return array_reduce(
             str_split($string),
-            fn ($carry, $current) => $carry . static::entitizeChar($current),
+            fn ($carry, $current) => $carry.static::entitizeChar($current),
             ''
         );
     }
@@ -20,8 +20,8 @@ class Str
         }
 
         return match (rand(1, 3)) {
-            1 => '&#' . $ord . ';',
-            2 => '&#x' . dechex($ord) . ';',
+            1 => '&#'.$ord.';',
+            2 => '&#x'.dechex($ord).';',
             3 => $char,
         };
     }
