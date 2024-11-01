@@ -21,4 +21,15 @@ class Muddle
     {
         return $this->text->muddle($string);
     }
+
+    public function strategy(
+        ?TextStrategy $text = null,
+        ?LinkStrategy $link = null,
+    ): static
+    {
+        $this->text = $text ?? $this->text;
+        $this->link = $link ?? $this->link;
+
+        return $this;
+    }
 }
