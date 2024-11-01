@@ -4,6 +4,7 @@ namespace Mokhosh\Muddle\Support;
 
 use Random\Randomizer;
 
+/** @internal */
 class Str
 {
     protected static array $domains = [
