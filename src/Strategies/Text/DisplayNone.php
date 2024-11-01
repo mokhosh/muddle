@@ -11,10 +11,10 @@ class DisplayNone implements TextStrategy
     {
         $offset = random_int(strpos($string, '@') + 1, strrpos($string, '.'));
         $domain = Str::randomDomain();
-        $comment = "<b class='$domain'>$domain</b>";
+        $hidden = "<b class='$domain'>$domain</b>";
         $style = "<style>.$domain {display: none}</style>";
 
-        return substr_replace($string, $comment, $offset, 0).$style;
+        return substr_replace($string, $hidden, $offset, 0).$style;
     }
 
     public function unmuddle(string $string): string
