@@ -56,12 +56,12 @@ In PHP Projects:
 
 ```php
 use Mokhosh\Muddle\Muddle;
-use Mokhosh\Muddle\Strategies\Link\UnsafePlain;
-use Mokhosh\Muddle\Strategies\Text\UnsafePlain;
+use Mokhosh\Muddle\Strategies\Text;
+use Mokhosh\Muddle\Strategies\Link;
 
 $muddle = new Muddle(
-    text: new UnsafePlain,
-    link: new UnsafePlain,
+    text: new Text\UnsafePlain,
+    link: new Link\UnsafePlain,
 );
 
 $muddle->link('test@example.com');
