@@ -3,23 +3,14 @@
 namespace Mokhosh\Muddle\Strategies\Text;
 
 use Mokhosh\Muddle\Contracts\TextStrategy;
+use Mokhosh\Muddle\Support\Str;
 
 class DisplayNone implements TextStrategy
 {
-    protected array $domains = [
-        'gmail',
-        'yahoo',
-        'hotmail',
-        'live',
-        'outlook',
-        'hey',
-        'yandex',
-    ];
-
     public function muddle(string $string): string
     {
         $offset = random_int(strpos($string, '@') + 1, strrpos($string, '.'));
-        $domain = $this->domains[array_rand($this->domains)];
+        $domain = Str::randomDomain();
         $comment = "<b class='$domain'>$domain</b>";
         $style = "<style>.$domain {display: none}</style>";
 

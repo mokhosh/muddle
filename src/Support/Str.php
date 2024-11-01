@@ -2,8 +2,20 @@
 
 namespace Mokhosh\Muddle\Support;
 
+use Random\Randomizer;
+
 class Str
 {
+    protected static array $domains = [
+        'gmail',
+        'yahoo',
+        'hotmail',
+        'live',
+        'outlook',
+        'hey',
+        'yandex',
+    ];
+
     public static function entitize(string $string): string
     {
         return array_reduce(
@@ -24,5 +36,12 @@ class Str
             2 => '&#x'.dechex($ord).';',
             3 => $char,
         };
+    }
+
+    public static function randomDomain()
+    {
+        $keys = (new Randomizer)->pickArrayKeys(static::$domains, 1);
+
+        return static::$domains[$keys[0]];
     }
 }
