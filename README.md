@@ -56,8 +56,13 @@ In PHP Projects:
 
 ```php
 use Mokhosh\Muddle\Muddle;
+use Mokhosh\Muddle\Strategies\Link\UnsafeLink;
+use Mokhosh\Muddle\Strategies\Text\UnsafeText;
 
-$muddle = new Muddle(text: TextStrategy::class, link: LinkStrategy::class);
+$muddle = new Muddle(
+    text: new UnsafeText,
+    link: new UnsafeLink,
+);
 
 $muddle->link('test@example.com');
 ```
@@ -66,14 +71,16 @@ In Laravel Projects:
 
 ```php
 use Mokhosh\Muddle\Facades\Muddle;
+use Mokhosh\Muddle\Strategies\Text;
+use Mokhosh\Muddle\Strategies\Link;
 
 // default strategy with facade
 Muddle::text('test@example.com');
 Muddle::link('test@example.com');
 
 // specific strategy with facade
-Muddle::strategy(text: TextStrategy::class)->text('test@example.com');
-Muddle::strategy(link: LinkStrategy::class)->link('test@example.com');
+Muddle::strategy(text: new Text\UnsafeEntities)->text('test@example.com')
+Muddle::strategy(link: new Link\UnsafeEntities)->link('test@example.com');
 
 // default strategy components
 <muddle::text email="test@example.com" />
