@@ -2,9 +2,9 @@
 
 namespace Mokhosh\Muddle;
 
+use Mokhosh\Muddle\Commands\MuddleCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mokhosh\Muddle\Commands\MuddleCommand;
 
 class MuddleServiceProvider extends PackageServiceProvider
 {
