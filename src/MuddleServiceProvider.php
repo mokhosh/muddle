@@ -2,7 +2,6 @@
 
 namespace Mokhosh\Muddle;
 
-use Mokhosh\Muddle\Commands\MuddleCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -13,7 +12,6 @@ class MuddleServiceProvider extends PackageServiceProvider
         $package
             ->name('muddle')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasCommand(MuddleCommand::class);
+            ->hasViews();
     }
 }
