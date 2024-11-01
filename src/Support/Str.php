@@ -32,7 +32,7 @@ class Str
             return $char;
         }
 
-        return match (rand(1, 3)) {
+        return match ((new Randomizer)->getInt(1, 3)) {
             1 => '&#'.$ord.';',
             2 => '&#x'.dechex($ord).';',
             3 => $char,
