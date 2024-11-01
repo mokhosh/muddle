@@ -25,4 +25,9 @@ class DisplayNone implements TextStrategy
 
         return substr_replace($string, $comment, $offset, 0).$style;
     }
+
+    public function unmuddle(string $string): string
+    {
+        return preg_replace('/<(b|style)[^>]*>[^<]+<\/(b|style)>/', '', $string);
+    }
 }

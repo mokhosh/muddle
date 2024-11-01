@@ -14,4 +14,9 @@ class Entities implements TextStrategy
     {
         return Str::entitize($string);
     }
+
+    public function unmuddle(string $string): string
+    {
+        return html_entity_decode($string);
+    }
 }

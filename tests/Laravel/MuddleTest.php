@@ -18,7 +18,7 @@ it('gets strategies from config', function () {
 
     expect($entitizedText = Muddle::text('test@example.com'))
         ->not->toBe('test@example.com')
-        ->and(html_entity_decode($entitizedText))
+        ->and((new Text\Entities)->unmuddle($entitizedText))
         ->toBe('test@example.com')
         ->and($entitizedLink = Muddle::link('test@example.com'))
         ->not->toBe('<a href="mailto:test@example.com">test@example.com</a>')
@@ -32,7 +32,7 @@ it('can change strategies on the fly', function () {
 
     expect($entitizedText)
         ->not->toBe('test@example.com')
-        ->and(html_entity_decode($entitizedText))
+        ->and((new Text\Entities)->unmuddle($entitizedText))
         ->toBe('test@example.com')
         ->and($entitizedLink)
         ->not->toBe('<a href="mailto:test@example.com">test@example.com</a>')

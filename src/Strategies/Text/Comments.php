@@ -27,4 +27,9 @@ class Comments implements TextStrategy
 
         return substr_replace($string, $comment, $offset, 0);
     }
+
+    public function unmuddle(string $string): string
+    {
+        return strip_tags($string);
+    }
 }

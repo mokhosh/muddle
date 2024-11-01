@@ -13,4 +13,9 @@ class Plain implements TextStrategy
     {
         return $string;
     }
+
+    public function unmuddle(string $string): string
+    {
+        return $string;
+    }
 }
