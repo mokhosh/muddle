@@ -27,6 +27,20 @@ This is the contents of the published config file:
 
 ```php
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Strategy
+    |--------------------------------------------------------------------------
+    |
+    | Set default strategies for obfuscating text and email links
+    |
+    */
+    'strategy' => [
+        'text' => TextStrategy::class,
+        'link' => LinkStrategy::class,
+    ],
+
 ];
 ```
 
@@ -38,9 +52,37 @@ php artisan vendor:publish --tag="muddle-views"
 
 ## Usage
 
+In PHP Projects:
+
 ```php
-$muddle = new Mokhosh\Muddle();
-echo $muddle->echoPhrase('Hello, Mokhosh!');
+use Mokhosh\Muddle\Muddle;
+
+$muddle = new Muddle(text: TextStrategy::class, link: LinkStrategy::class);
+
+$muddle->link('test@example.com');
+```
+
+In Laravel Projects:
+
+```php
+use Mokhosh\Muddle\Facades\Muddle;
+
+// default strategy with facade
+Muddle::text('test@example.com');
+Muddle::link('test@example.com');
+
+// specific strategy with facade
+Muddle::strategy(text: TextStrategy::class)->text('test@example.com');
+Muddle::strategy(link: LinkStrategy::class)->link('test@example.com');
+
+// default strategy components
+<muddle::text email="test@example.com" />
+<muddle::link email="test@example.com" />
+
+// specific strategy components
+<muddle::mail email="test@example.com" />
+<muddle::svg email="test@example.com" />
+<muddle::comment email="test@example.com" />
 ```
 
 ## Testing
