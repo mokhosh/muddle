@@ -21,7 +21,7 @@ class MuddleServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        App::singleton(TextStrategy::class, Config::get('muddle.strategy.text'));
-        App::singleton(LinkStrategy::class, Config::get('muddle.strategy.link'));
+        App::singleton(TextStrategy::class, fn () => new (Config::get('muddle.strategy.text')));
+        App::singleton(LinkStrategy::class, fn () => new (Config::get('muddle.strategy.link')));
     }
 }
