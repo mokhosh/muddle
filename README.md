@@ -60,8 +60,8 @@ use Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Strategies\Link;
 
 $muddle = new Muddle(
-    text: new Text\UnsafePlain,
-    link: new Link\UnsafePlain,
+    text: new Text\Plain,
+    link: new Link\Plain,
 );
 
 $muddle->link('test@example.com');
@@ -79,8 +79,8 @@ Muddle::text('test@example.com');
 Muddle::link('test@example.com');
 
 // specific strategy with facade
-Muddle::strategy(text: new Text\UnsafeEntities)->text('test@example.com')
-Muddle::strategy(link: new Link\UnsafeEntities)->link('test@example.com');
+Muddle::strategy(text: new Text\Entities)->text('test@example.com')
+Muddle::strategy(link: new Link\Entities)->link('test@example.com');
 
 // default strategy components
 <muddle::text email="test@example.com" />

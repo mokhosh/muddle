@@ -11,8 +11,8 @@ return [
     |
     */
     'strategy' => [
-        'text' => \Mokhosh\Muddle\Strategies\Text\UnsafePlain::class,
-        'link' => \Mokhosh\Muddle\Strategies\Link\UnsafePlain::class,
+        'text' => \Mokhosh\Muddle\Strategies\Text\Plain::class,
+        'link' => \Mokhosh\Muddle\Strategies\Link\Plain::class,
     ],
 
 ];

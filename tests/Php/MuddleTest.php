@@ -6,8 +6,8 @@ use Mokhosh\Muddle\Strategies\Text;
 
 it('works with basic unsafe strategies', function () {
     $muddle = new Muddle(
-        text: new Text\UnsafePlain,
-        link: new Link\UnsafePlain,
+        text: new Text\Plain,
+        link: new Link\Plain,
     );
 
     expect($muddle->text('test@example.com'))

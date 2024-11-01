@@ -5,7 +5,10 @@ namespace Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Support\Str;
 
-class UnsafeEntities implements TextStrategy
+/**
+ * Warning: This won't prevent bots. Don't use in production.
+ */
+class Entities implements TextStrategy
 {
     public function muddle(string $string): string
     {

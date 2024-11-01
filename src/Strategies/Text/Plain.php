@@ -4,7 +4,10 @@ namespace Mokhosh\Muddle\Strategies\Text;
 
 use Mokhosh\Muddle\Contracts\TextStrategy;
 
-class UnsafePlain implements TextStrategy
+/**
+ * Warning: This won't prevent bots. Don't use in production.
+ */
+class Plain implements TextStrategy
 {
     public function muddle(string $string): string
     {

@@ -13,8 +13,8 @@ it('works with basic unsafe strategies', function () {
 });
 
 it('gets strategies from config', function () {
-    Config::set('muddle.strategy.text', Text\UnsafeEntities::class);
-    Config::set('muddle.strategy.link', Link\UnsafeEntities::class);
+    Config::set('muddle.strategy.text', Text\Entities::class);
+    Config::set('muddle.strategy.link', Link\Entities::class);
 
     expect($entitizedText = Muddle::text('test@example.com'))
         ->not->toBe('test@example.com')
@@ -27,8 +27,8 @@ it('gets strategies from config', function () {
 });
 
 it('can change strategies on the fly', function () {
-    $entitizedText = Muddle::strategy(text: new Text\UnsafeEntities)->text('test@example.com');
-    $entitizedLink = Muddle::strategy(link: new Link\UnsafeEntities)->link('test@example.com');
+    $entitizedText = Muddle::strategy(text: new Text\Entities)->text('test@example.com');
+    $entitizedLink = Muddle::strategy(link: new Link\Entities)->link('test@example.com');
 
     expect($entitizedText)
         ->not->toBe('test@example.com')

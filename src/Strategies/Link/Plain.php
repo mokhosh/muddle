@@ -4,7 +4,10 @@ namespace Mokhosh\Muddle\Strategies\Link;
 
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 
-class UnsafePlain implements LinkStrategy
+/**
+ * Warning: This won't prevent bots. Don't use in production.
+ */
+class Plain implements LinkStrategy
 {
     public function muddle(string $string): string
     {
