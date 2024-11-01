@@ -45,4 +45,16 @@ class Str
 
         return static::$domains[$keys[0]];
     }
+
+    /**
+     * Get a random offset within a string, optionally between the
+     * first occurrence of `$start` and the last occurrence of `$end`
+     */
+    public static function randomOffset(string $string, ?string $start = null, ?string $end = null): int
+    {
+        $min = is_null($start) ? 0 : strpos($string, $start);
+        $max = is_null($end) ? strlen($string) : strrpos($string, $end);
+
+        return random_int($min, $max);
+    }
 }

@@ -12,7 +12,7 @@ class Comments implements TextStrategy
 {
     public function muddle(string $string): string
     {
-        $offset = random_int(strpos($string, '@') + 1, strrpos($string, '.'));
+        $offset = Str::randomOffset($string, '@', '.');
         $domain = Str::randomDomain();
         $comment = "<!--$domain-->";
 
