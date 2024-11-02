@@ -5,6 +5,8 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/mokhosh/muddle/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/mokhosh/muddle/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/mokhosh/muddle.svg?style=flat-square)](https://packagist.org/packages/mokhosh/muddle)
 
+Please, don't just put plain raw emails on your web pages. Bots are going to scrape your pages and fill all of our inboxes with spam emails.
+
 Obfuscate emails and strings in PHP and Laravel to keep those nasty bots away from finding your email or worse, your users' emails.
 
 This package uses different strategies to obfuscate clickable and non-clickable emails, so you can choose what suits your needs best.
