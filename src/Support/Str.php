@@ -57,4 +57,13 @@ class Str
 
         return random_int($min, $max);
     }
+
+    public static function rotate(string $string, int $number = 16): string
+    {
+        $number %= 64;
+        $plain = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890@.';
+        $cipher = substr($plain, $number).substr($plain, 0, $number);
+
+        return strtr($string, $plain, $cipher);
+    }
 }
