@@ -66,4 +66,37 @@ class Str
 
         return strtr($string, $plain, $cipher);
     }
+
+    public static function id(string $prefix = 'C', ?int $number = null): string
+    {
+        $number ??= (new Randomizer)->getInt(100_000, 999_999);
+
+        return $prefix.$number;
+    }
+
+    /**
+     * @param int $key Integer between 0 and 255
+     */
+    public static function hex(string $string, int $key = 64): string
+    {
+        $hexed = array_map(
+            fn ($char) => dechex(ord($char) ^ $key),
+            str_split($string),
+        );
+
+        return implode(' ', $hexed);
+    }
+
+    /**
+     * @param int $key Integer between 0 and 255
+     */
+    public static function unhex(string $string, int $key = 64): string
+    {
+        $unhexed = array_map(
+            fn ($char) => chr(intval($char, 16) ^ $key),
+            explode(' ', $string),
+        );
+
+        return implode($unhexed);
+    }
 }
