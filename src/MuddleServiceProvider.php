@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
+use Mokhosh\Muddle\Components\TextAppend;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -16,7 +17,9 @@ class MuddleServiceProvider extends PackageServiceProvider
         $package
             ->name('muddle')
             ->hasConfigFile()
-            ->hasViews();
+            ->hasViewComponents('muddle',
+                TextAppend::class,
+            );
     }
 
     public function packageRegistered(): void
