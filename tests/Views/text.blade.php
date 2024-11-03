@@ -2,3 +2,4 @@
 <x-muddle-text-concatenation email="test@example.com" />
 <x-muddle-text-display-none email="test@example.com" />
 <x-muddle-text-encrypt email="test@example.com" />
+<x-muddle-text-entities email="test@example.com" />
