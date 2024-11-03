@@ -104,4 +104,14 @@ class Str
     {
         return (new Randomizer)->shuffleBytes($string);
     }
+
+    public static function urlEncode(string $string): string
+    {
+        $hexed = array_map(
+            fn ($char) => '%'.dechex(ord($char)),
+            str_split($string),
+        );
+
+        return implode($hexed);
+    }
 }
