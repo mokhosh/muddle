@@ -1,3 +1,4 @@
+<x-muddle-link email="test@example.com" title="email" />
 <x-muddle-random email="test@example.com" title="email" />
 <x-muddle-append email="test@example.com" title="email" />
 <x-muddle-concatenation email="test@example.com" title="email" />
