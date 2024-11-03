@@ -8,7 +8,7 @@ use Mokhosh\Muddle\Support\Str;
 /**
  * Warning: This won't prevent all bots. Don't use in production.
  */
-class Comments implements TextStrategy
+class Comment implements TextStrategy
 {
     public function muddle(string $string): string
     {
