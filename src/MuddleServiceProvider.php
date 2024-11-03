@@ -8,6 +8,7 @@ use Mokhosh\Muddle\Components\TextConcatenation;
 use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Components\TextEncrypt;
 use Mokhosh\Muddle\Components\TextEntities;
+use Mokhosh\Muddle\Components\TextHex;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Components\TextAppend;
@@ -27,6 +28,7 @@ class MuddleServiceProvider extends PackageServiceProvider
                 TextDisplayNone::class,
                 TextEncrypt::class,
                 TextEntities::class,
+                TextHex::class,
             );
     }
 
