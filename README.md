@@ -85,7 +85,7 @@ Muddle::strategy(text: new Text\Encrypt)->text('test@example.com')
 Muddle::strategy(link: new Link\Encrypt)->link('test@example.com');
 ```
 
-```bladehtml
+```blade
 {{-- default strategy components --}}
 <x-muddle-text email="test@example.com" />
 <x-muddle-link email="test@example.com" />
