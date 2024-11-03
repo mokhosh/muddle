@@ -9,12 +9,12 @@ use Mokhosh\Muddle\Contracts\LinkStrategy;
  */
 class Plain implements LinkStrategy
 {
-    public function muddle(string $string): string
+    public function muddle(string $string, ?string $title = null): string
     {
         return sprintf(
             '<a href="mailto:%s">%s</a>',
             $string,
-            $string,
+            $title ?? $string,
         );
     }
 }
