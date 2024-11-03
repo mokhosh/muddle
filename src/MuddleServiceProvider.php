@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Mokhosh\Muddle\Components\TextConcatenation;
 use Mokhosh\Muddle\Components\TextDisplayNone;
+use Mokhosh\Muddle\Components\TextEncrypt;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Components\TextAppend;
@@ -23,6 +24,7 @@ class MuddleServiceProvider extends PackageServiceProvider
                 TextAppend::class,
                 TextConcatenation::class,
                 TextDisplayNone::class,
+                TextEncrypt::class,
             );
     }
 
