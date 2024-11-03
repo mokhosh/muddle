@@ -5,7 +5,6 @@ namespace Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Attributes\Unsafe;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 
-
 /**
  * Warning: This won't prevent bots. Don't use in production.
  */

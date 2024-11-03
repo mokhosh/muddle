@@ -13,6 +13,7 @@ use Mokhosh\Muddle\Components\Link;
 use Mokhosh\Muddle\Components\Random;
 use Mokhosh\Muddle\Components\Rotate;
 use Mokhosh\Muddle\Components\Text;
+use Mokhosh\Muddle\Components\TextAppend;
 use Mokhosh\Muddle\Components\TextConcatenation;
 use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Components\TextEncrypt;
@@ -22,7 +23,6 @@ use Mokhosh\Muddle\Components\TextRandom;
 use Mokhosh\Muddle\Components\TextRotate;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
-use Mokhosh\Muddle\Components\TextAppend;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

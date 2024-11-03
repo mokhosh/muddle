@@ -24,7 +24,7 @@ trait PicksRandomSibling
             }
 
             ['filename' => $className] = pathinfo($file);
-            $stateClass = $namespace . '\\' . $className;
+            $stateClass = $namespace.'\\'.$className;
 
             if (static::class === $stateClass) {
                 continue;
