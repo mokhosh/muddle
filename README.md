@@ -87,17 +87,17 @@ Muddle::strategy(link: new Link\Encrypt)->link('test@example.com');
 
 ```blade
 {{-- default strategy components --}}
+<x-muddle-link email="test@example.com" title="email" />
 <x-muddle-text email="test@example.com" />
-<x-muddle-link email="test@example.com" />
 
 {{-- specific link strategy components --}}
-<x-muddle-random email="test@example.com" />
-<x-muddle-append email="test@example.com" />
-<x-muddle-concatenation email="test@example.com" />
-<x-muddle-encrypt email="test@example.com" />
-<x-muddle-entities email="test@example.com" />
-<x-muddle-hex email="test@example.com" />
-<x-muddle-rotate email="test@example.com" />
+<x-muddle-random email="test@example.com" title="email" />
+<x-muddle-append email="test@example.com" title="email" />
+<x-muddle-concatenation email="test@example.com" title="email" />
+<x-muddle-encrypt email="test@example.com" title="email" />
+<x-muddle-entities email="test@example.com" title="email" />
+<x-muddle-hex email="test@example.com" title="email" />
+<x-muddle-rotate email="test@example.com" title="email" />
 
 {{-- specific text strategy components --}}
 <x-muddle-text-random email="test@example.com" />
