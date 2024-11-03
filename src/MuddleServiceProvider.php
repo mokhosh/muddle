@@ -8,6 +8,7 @@ use Mokhosh\Muddle\Components\Append;
 use Mokhosh\Muddle\Components\Concatenation;
 use Mokhosh\Muddle\Components\Entities;
 use Mokhosh\Muddle\Components\Hex;
+use Mokhosh\Muddle\Components\Rotate;
 use Mokhosh\Muddle\Components\TextConcatenation;
 use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Components\TextEncrypt;
@@ -32,6 +33,7 @@ class MuddleServiceProvider extends PackageServiceProvider
                 Concatenation::class,
                 Entities::class,
                 Hex::class,
+                Rotate::class,
                 TextAppend::class,
                 TextConcatenation::class,
                 TextDisplayNone::class,
