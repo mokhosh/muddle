@@ -5,6 +5,7 @@ namespace Mokhosh\Muddle;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Mokhosh\Muddle\Components\TextConcatenation;
+use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Components\TextAppend;
@@ -21,6 +22,7 @@ class MuddleServiceProvider extends PackageServiceProvider
             ->hasViewComponents('muddle',
                 TextAppend::class,
                 TextConcatenation::class,
+                TextDisplayNone::class,
             );
     }
 
