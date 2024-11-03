@@ -9,6 +9,7 @@ use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Components\TextEncrypt;
 use Mokhosh\Muddle\Components\TextEntities;
 use Mokhosh\Muddle\Components\TextHex;
+use Mokhosh\Muddle\Components\TextRotate;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Components\TextAppend;
@@ -29,6 +30,7 @@ class MuddleServiceProvider extends PackageServiceProvider
                 TextEncrypt::class,
                 TextEntities::class,
                 TextHex::class,
+                TextRotate::class,
             );
     }
 
