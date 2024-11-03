@@ -13,7 +13,7 @@ class Rotate implements LinkStrategy
         $id = Str::id(number: $number);
         $rotated = Str::rotate('mailto:'.$string, $number);
         $script = <<<HTML
-        </span><script>
+        </a><script>
         (function() {
             const number = $number % 64
             const plain = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890@.';
@@ -24,7 +24,7 @@ class Rotate implements LinkStrategy
         </script>
         HTML;
 
-        return "<a id='$id' href='$rotated'>".$title.'</a>'.$script;
+        return "<a id='$id' href='$rotated'>".$title.$script;
     }
 
     public function unmuddle(string $string): string
