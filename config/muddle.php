@@ -11,8 +11,8 @@ return [
     |
     */
     'strategy' => [
-        'text' => \Mokhosh\Muddle\Strategies\Text\Plain::class,
-        'link' => \Mokhosh\Muddle\Strategies\Link\Plain::class,
+        'text' => \Mokhosh\Muddle\Strategies\Text\Random::class,
+        'link' => \Mokhosh\Muddle\Strategies\Link\Random::class,
     ],
 
 ];
