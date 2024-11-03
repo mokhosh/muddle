@@ -19,4 +19,9 @@ class UrlEncode implements LinkStrategy
             $title,
         );
     }
+
+    public function unmuddle(string $string): string
+    {
+        return urldecode($string);
+    }
 }

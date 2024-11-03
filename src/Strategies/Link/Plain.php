@@ -17,4 +17,9 @@ class Plain implements LinkStrategy
             $title ?? $string,
         );
     }
+
+    public function unmuddle(string $string): string
+    {
+        return $string;
+    }
 }

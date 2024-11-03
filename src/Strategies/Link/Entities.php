@@ -19,4 +19,9 @@ class Entities implements LinkStrategy
             $title ?? $entitized,
         );
     }
+
+    public function unmuddle(string $string): string
+    {
+        return html_entity_decode($string);
+    }
 }
