@@ -83,15 +83,29 @@ Muddle::link('test@example.com');
 // specific strategy with facade
 Muddle::strategy(text: new Text\Entities)->text('test@example.com')
 Muddle::strategy(link: new Link\Entities)->link('test@example.com');
+```
 
-// default strategy components
-<muddle::text email="test@example.com" />
-<muddle::link email="test@example.com" />
+```bladehtml
+{{-- default strategy components --}}
+<x-muddle-text email="test@example.com" />
+<x-muddle-link email="test@example.com" />
 
-// specific strategy components
-<muddle::mail email="test@example.com" />
-<muddle::svg email="test@example.com" />
-<muddle::comment email="test@example.com" />
+{{-- specific link strategy components --}}
+<x-muddle-append email="test@example.com" />
+<x-muddle-concatenation email="test@example.com" />
+<x-muddle-encrypt email="test@example.com" />
+<x-muddle-entities email="test@example.com" />
+<x-muddle-hex email="test@example.com" />
+<x-muddle-rotate email="test@example.com" />
+
+{{-- specific text strategy components --}}
+<x-muddle-text-append email="test@example.com" />
+<x-muddle-text-concatenation email="test@example.com" />
+<x-muddle-text-display-none email="test@example.com" />
+<x-muddle-text-encrypt email="test@example.com" />
+<x-muddle-text-entities email="test@example.com" />
+<x-muddle-text-hex email="test@example.com" />
+<x-muddle-text-rotate email="test@example.com" />
 ```
 
 ## Testing
@@ -102,9 +116,8 @@ composer test
 
 ## Todo
 
-- [ ] Add Blade components
 - [ ] Add Dusk tests
-- [ ] Add Random strategy and make it the default strategy
+- [ ] Add Random strategy
 - [ ] Make Random the default strategy
 
 ## Contributing
