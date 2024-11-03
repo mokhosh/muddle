@@ -39,8 +39,8 @@ return [
     |
     */
     'strategy' => [
-        'text' => TextStrategy::class,
-        'link' => LinkStrategy::class,
+        'text' => \Mokhosh\Muddle\Strategies\Text\Random::class,
+        'link' => \Mokhosh\Muddle\Strategies\Link\Random::class,
     ],
 
 ];
@@ -62,8 +62,8 @@ use Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Strategies\Link;
 
 $muddle = new Muddle(
-    text: new Text\Plain,
-    link: new Link\Plain,
+    text: new Text\Random,
+    link: new Link\Random,
 );
 
 $muddle->link('test@example.com');
@@ -81,8 +81,8 @@ Muddle::text('test@example.com');
 Muddle::link('test@example.com');
 
 // specific strategy with facade
-Muddle::strategy(text: new Text\Entities)->text('test@example.com')
-Muddle::strategy(link: new Link\Entities)->link('test@example.com');
+Muddle::strategy(text: new Text\Encrypt)->text('test@example.com')
+Muddle::strategy(link: new Link\Encrypt)->link('test@example.com');
 ```
 
 ```bladehtml
@@ -91,6 +91,7 @@ Muddle::strategy(link: new Link\Entities)->link('test@example.com');
 <x-muddle-link email="test@example.com" />
 
 {{-- specific link strategy components --}}
+<x-muddle-random email="test@example.com" />
 <x-muddle-append email="test@example.com" />
 <x-muddle-concatenation email="test@example.com" />
 <x-muddle-encrypt email="test@example.com" />
@@ -99,6 +100,7 @@ Muddle::strategy(link: new Link\Entities)->link('test@example.com');
 <x-muddle-rotate email="test@example.com" />
 
 {{-- specific text strategy components --}}
+<x-muddle-text-random email="test@example.com" />
 <x-muddle-text-append email="test@example.com" />
 <x-muddle-text-concatenation email="test@example.com" />
 <x-muddle-text-display-none email="test@example.com" />
@@ -117,8 +119,6 @@ composer test
 ## Todo
 
 - [ ] Add Dusk tests
-- [ ] Add Random strategy
-- [ ] Make Random the default strategy
 - [ ] Make loading components dynamic
 
 ## Contributing
