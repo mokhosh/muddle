@@ -119,6 +119,7 @@ composer test
 - [ ] Add Dusk tests
 - [ ] Add Random strategy
 - [ ] Make Random the default strategy
+- [ ] Make loading components dynamic
 
 ## Contributing
 
