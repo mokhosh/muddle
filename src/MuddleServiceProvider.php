@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Mokhosh\Muddle\Components\Append;
 use Mokhosh\Muddle\Components\Concatenation;
+use Mokhosh\Muddle\Components\Encrypt;
 use Mokhosh\Muddle\Components\Entities;
 use Mokhosh\Muddle\Components\Hex;
 use Mokhosh\Muddle\Components\Rotate;
@@ -31,6 +32,7 @@ class MuddleServiceProvider extends PackageServiceProvider
             ->hasViewComponents('muddle',
                 Append::class,
                 Concatenation::class,
+                Encrypt::class,
                 Entities::class,
                 Hex::class,
                 Rotate::class,
