@@ -9,12 +9,14 @@ use Mokhosh\Muddle\Components\Concatenation;
 use Mokhosh\Muddle\Components\Encrypt;
 use Mokhosh\Muddle\Components\Entities;
 use Mokhosh\Muddle\Components\Hex;
+use Mokhosh\Muddle\Components\Random;
 use Mokhosh\Muddle\Components\Rotate;
 use Mokhosh\Muddle\Components\TextConcatenation;
 use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Components\TextEncrypt;
 use Mokhosh\Muddle\Components\TextEntities;
 use Mokhosh\Muddle\Components\TextHex;
+use Mokhosh\Muddle\Components\TextRandom;
 use Mokhosh\Muddle\Components\TextRotate;
 use Mokhosh\Muddle\Contracts\LinkStrategy;
 use Mokhosh\Muddle\Contracts\TextStrategy;
@@ -36,6 +38,7 @@ class MuddleServiceProvider extends PackageServiceProvider
                 Entities::class,
                 Hex::class,
                 Rotate::class,
+                Random::class,
                 TextAppend::class,
                 TextConcatenation::class,
                 TextDisplayNone::class,
@@ -43,6 +46,7 @@ class MuddleServiceProvider extends PackageServiceProvider
                 TextEntities::class,
                 TextHex::class,
                 TextRotate::class,
+                TextRandom::class,
             );
     }
 
