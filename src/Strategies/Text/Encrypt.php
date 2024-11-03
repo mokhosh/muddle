@@ -3,12 +3,13 @@
 namespace Mokhosh\Muddle\Strategies\Text;
 
 use Mokhosh\Muddle\Contracts\TextStrategy;
+use Mokhosh\Muddle\Support\Str;
 
 class Encrypt implements TextStrategy
 {
     public function muddle(string $string): string
     {
-        $id = 'C'.random_int(10000, 99999);
+        $id = Str::id();
         $plain = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@._';
         $cipher = str_shuffle($plain);
         $script = <<<HTML

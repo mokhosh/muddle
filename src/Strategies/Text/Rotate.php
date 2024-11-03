@@ -10,7 +10,7 @@ class Rotate implements TextStrategy
     public function muddle(string $string): string
     {
         $number = random_int(10000, 99999);
-        $id = 'C'.$number;
+        $id = Str::id(number: $number);
         $rotated = Str::rotate($string, $number);
         $script = <<<HTML
         </span><script>

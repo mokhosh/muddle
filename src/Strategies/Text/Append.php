@@ -9,7 +9,7 @@ class Append implements TextStrategy
 {
     public function muddle(string $string): string
     {
-        $id = 'C'.random_int(10000, 99999);
+        $id = Str::id();
         $username = substr($string, 0, strpos($string, '@'));
         $domain = substr($string, strpos($string, '@'));
         $script = <<<HTML
