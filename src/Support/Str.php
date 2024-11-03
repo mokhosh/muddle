@@ -75,7 +75,7 @@ class Str
     }
 
     /**
-     * @param int $key Integer between 0 and 255
+     * @param  int  $key  Integer between 0 and 255
      */
     public static function hex(string $string, int $key = 64): string
     {
@@ -88,7 +88,7 @@ class Str
     }
 
     /**
-     * @param int $key Integer between 0 and 255
+     * @param  int  $key  Integer between 0 and 255
      */
     public static function unhex(string $string, int $key = 64): string
     {

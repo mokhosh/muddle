@@ -4,7 +4,6 @@ namespace Mokhosh\Muddle\Strategies\Text;
 
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Support\Str;
-use Random\Randomizer;
 
 class Encrypt implements TextStrategy
 {
