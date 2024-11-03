@@ -31,7 +31,8 @@ class Rotate implements LinkStrategy
     {
         preg_match('/const number = (\d+)/', $string, $number);
         preg_match('/href=\'([^\']+)\'>/', $string, $rotated);
+        preg_match('/>([^<]+)<\/a>/', $string, $title);
 
-        return '<a href="'.Str::rotate($rotated[1], -$number[1]).'">email</a>';
+        return '<a href="'.Str::rotate($rotated[1], -$number[1])."\">$title[1]</a>";
     }
 }
