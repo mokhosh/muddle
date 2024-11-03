@@ -12,6 +12,6 @@ it('works with basic unsafe strategies', function () {
 
     expect($muddle->text('test@example.com'))
         ->toBe('test@example.com')
-        ->and($muddle->link('test@example.com'))
-        ->toBe('<a href="mailto:test@example.com">test@example.com</a>');
+        ->and($muddle->link('test@example.com', 'email'))
+        ->toBe('<a href="mailto:test@example.com">email</a>');
 });
