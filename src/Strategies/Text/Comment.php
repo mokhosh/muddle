@@ -2,12 +2,14 @@
 
 namespace Mokhosh\Muddle\Strategies\Text;
 
+use Mokhosh\Muddle\Attributes\Unsafe;
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Support\Str;
 
 /**
  * Warning: This won't prevent all bots. Don't use in production.
  */
+#[Unsafe]
 class Comment implements TextStrategy
 {
     public function muddle(string $string): string
