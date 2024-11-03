@@ -4,6 +4,7 @@ namespace Mokhosh\Muddle\Strategies\Text;
 
 use Mokhosh\Muddle\Contracts\TextStrategy;
 use Mokhosh\Muddle\Support\Str;
+use Random\Randomizer;
 
 class Encrypt implements TextStrategy
 {
@@ -11,7 +12,7 @@ class Encrypt implements TextStrategy
     {
         $id = Str::id();
         $plain = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@._';
-        $cipher = str_shuffle($plain);
+        $cipher = Str::shuffle($plain);
         $script = <<<HTML
         </span><script>
         (function() {

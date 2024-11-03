@@ -99,4 +99,9 @@ class Str
 
         return implode($unhexed);
     }
+
+    public static function shuffle(string $string): string
+    {
+        return (new Randomizer)->shuffleBytes($string);
+    }
 }
