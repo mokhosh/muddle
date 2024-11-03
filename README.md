@@ -100,6 +100,13 @@ Muddle::strategy(link: new Link\Entities)->link('test@example.com');
 composer test
 ```
 
+## Todo
+
+- [ ] Add Blade components
+- [ ] Add Dusk tests
+- [ ] Add Random strategy and make it the default strategy
+- [ ] Make Random the default strategy
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
