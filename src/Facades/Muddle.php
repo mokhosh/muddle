@@ -9,7 +9,7 @@ use Mokhosh\Muddle\Contracts\TextStrategy;
 /**
  * @see \Mokhosh\Muddle\Muddle
  *
- * @method static string link(string $string)
+ * @method static string link(string $email, string $title)
  * @method static string text(string $string)
  * @method static static strategy(?TextStrategy $text = null, ?LinkStrategy $link = null)
  */

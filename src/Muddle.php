@@ -12,9 +12,9 @@ class Muddle
         protected LinkStrategy $link,
     ) {}
 
-    public function link(string $string): string
+    public function link(string $email, string $title): string
     {
-        return $this->link->muddle($string);
+        return $this->link->muddle($email, $title);
     }
 
     public function text(string $string): string
