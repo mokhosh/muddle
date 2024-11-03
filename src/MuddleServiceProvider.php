@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Mokhosh\Muddle\Components\Append;
 use Mokhosh\Muddle\Components\Concatenation;
+use Mokhosh\Muddle\Components\Entities;
 use Mokhosh\Muddle\Components\TextConcatenation;
 use Mokhosh\Muddle\Components\TextDisplayNone;
 use Mokhosh\Muddle\Components\TextEncrypt;
@@ -28,6 +29,7 @@ class MuddleServiceProvider extends PackageServiceProvider
             ->hasViewComponents('muddle',
                 Append::class,
                 Concatenation::class,
+                Entities::class,
                 TextAppend::class,
                 TextConcatenation::class,
                 TextDisplayNone::class,
