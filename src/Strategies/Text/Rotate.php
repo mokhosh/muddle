@@ -19,7 +19,7 @@ class Rotate implements TextStrategy
             const plain = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890@.';
             const cipher = plain.slice(number) + plain.slice(0, number);
 
-            $id.innerText = $id.innerText.split('').map((letter) => plain[cipher.indexOf(letter)]).join('')
+            $id.innerText = $id.innerText.split('').map((letter) => plain[cipher.indexOf(letter)] ?? letter).join('')
         })()
         </script>
         HTML;
