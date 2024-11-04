@@ -16,7 +16,7 @@ it('gets strategies from config', function () {
         ->and($entitizedLink = Muddle::link('test@example.com', 'email'))
         ->not->toBe('<a href="mailto:test@example.com">email</a>')
         ->and(html_entity_decode($entitizedLink))
-        ->toBe('<a href="mailto:test@example.com">email</a>');
+        ->toBe('<a href="mailto:test@example.com" data-attributes>email</a>');
 });
 
 it('can change strategies on the fly', function () {
@@ -30,5 +30,5 @@ it('can change strategies on the fly', function () {
         ->and($entitizedLink)
         ->not->toBe('<a href="mailto:test@example.com">email</a>')
         ->and(html_entity_decode($entitizedLink))
-        ->toBe('<a href="mailto:test@example.com">email</a>');
+        ->toBe('<a href="mailto:test@example.com" data-attributes>email</a>');
 });

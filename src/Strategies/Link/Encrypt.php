@@ -34,13 +34,13 @@ class Encrypt implements LinkStrategy
     {
         preg_match('/const plain = \'([^\']+)\'/', $string, $plain);
         preg_match('/const cipher = \'([^\']+)\'/', $string, $cipher);
-        preg_match('/href=\'([^\']+)\'>/', $string, $muddled);
+        preg_match('/href=\'([^\']+)\'/', $string, $muddled);
         preg_match('/>([^<]+)<\/a>/', $string, $title);
 
         return '<a href="'.strtr(
             $muddled[1],
             $cipher[1],
             $plain[1],
-        )."\">$title[1]</a>";
+        )."\" data-attributes>$title[1]</a>";
     }
 }

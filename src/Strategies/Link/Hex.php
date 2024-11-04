@@ -26,7 +26,7 @@ class Hex implements LinkStrategy
     public function unmuddle(string $string): string
     {
         preg_match('/ \^ (\d+)/', $string, $key);
-        preg_match('/href=\'([^\']+)\'>/', $string, $hexed);
+        preg_match('/href=\'([^\']+)\'/', $string, $hexed);
         preg_match('/>([^<]+)<\/a>/', $string, $title);
 
         return '<a href="'.Str::unhex($hexed[1], $key[1])."\">$title[1]</a>";
