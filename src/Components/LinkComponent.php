@@ -24,5 +24,5 @@ abstract class LinkComponent extends Component
         );
     }
 
-    protected abstract function strategy(): LinkStrategy;
+    abstract protected function strategy(): LinkStrategy;
 }

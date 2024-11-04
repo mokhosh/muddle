@@ -14,10 +14,10 @@ abstract class TextComponent extends Component
 
     public function render(): string
     {
-        return  Muddle::strategy(
+        return Muddle::strategy(
             text: $this->strategy()
         )->text($this->email);
     }
 
-    protected abstract function strategy(): TextStrategy;
+    abstract protected function strategy(): TextStrategy;
 }
