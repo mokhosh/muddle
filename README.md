@@ -19,6 +19,66 @@ You can install the package via composer:
 composer require mokhosh/muddle
 ```
 
+## Usage
+
+In Laravel Projects:
+
+```blade
+{{-- default strategy components --}}
+<x-muddle-link email="test@example.com" title="email" />
+<x-muddle-text email="test@example.com" />
+
+{{-- specific link strategy components --}}
+<x-muddle-random email="test@example.com" title="email" />
+<x-muddle-append email="test@example.com" title="email" />
+<x-muddle-concatenation email="test@example.com" title="email" />
+<x-muddle-encrypt email="test@example.com" title="email" />
+<x-muddle-entities email="test@example.com" title="email" />
+<x-muddle-hex email="test@example.com" title="email" />
+<x-muddle-rotate email="test@example.com" title="email" />
+
+{{-- specific text strategy components --}}
+<x-muddle-text-random email="test@example.com" />
+<x-muddle-text-append email="test@example.com" />
+<x-muddle-text-concatenation email="test@example.com" />
+<x-muddle-text-display-none email="test@example.com" />
+<x-muddle-text-encrypt email="test@example.com" />
+<x-muddle-text-entities email="test@example.com" />
+<x-muddle-text-hex email="test@example.com" />
+<x-muddle-text-rotate email="test@example.com" />
+```
+
+```php
+use Mokhosh\Muddle\Facades\Muddle;
+use Mokhosh\Muddle\Strategies\Text;
+use Mokhosh\Muddle\Strategies\Link;
+
+// default strategy with facade
+Muddle::text('test@example.com');
+Muddle::link('test@example.com');
+
+// specific strategy with facade
+Muddle::strategy(text: new Text\Encrypt)->text('test@example.com')
+Muddle::strategy(link: new Link\Encrypt)->link('test@example.com');
+```
+
+In PHP Projects:
+
+```php
+use Mokhosh\Muddle\Muddle;
+use Mokhosh\Muddle\Strategies\Text;
+use Mokhosh\Muddle\Strategies\Link;
+
+$muddle = new Muddle(
+    text: new Text\Random,
+    link: new Link\Random,
+);
+
+$muddle->link('test@example.com');
+```
+
+## Configuration
+
 You can publish the config file with:
 
 ```bash
@@ -50,64 +110,6 @@ Optionally, you can publish the views using
 
 ```bash
 php artisan vendor:publish --tag="muddle-views"
-```
-
-## Usage
-
-In PHP Projects:
-
-```php
-use Mokhosh\Muddle\Muddle;
-use Mokhosh\Muddle\Strategies\Text;
-use Mokhosh\Muddle\Strategies\Link;
-
-$muddle = new Muddle(
-    text: new Text\Random,
-    link: new Link\Random,
-);
-
-$muddle->link('test@example.com');
-```
-
-In Laravel Projects:
-
-```php
-use Mokhosh\Muddle\Facades\Muddle;
-use Mokhosh\Muddle\Strategies\Text;
-use Mokhosh\Muddle\Strategies\Link;
-
-// default strategy with facade
-Muddle::text('test@example.com');
-Muddle::link('test@example.com');
-
-// specific strategy with facade
-Muddle::strategy(text: new Text\Encrypt)->text('test@example.com')
-Muddle::strategy(link: new Link\Encrypt)->link('test@example.com');
-```
-
-```blade
-{{-- default strategy components --}}
-<x-muddle-link email="test@example.com" title="email" />
-<x-muddle-text email="test@example.com" />
-
-{{-- specific link strategy components --}}
-<x-muddle-random email="test@example.com" title="email" />
-<x-muddle-append email="test@example.com" title="email" />
-<x-muddle-concatenation email="test@example.com" title="email" />
-<x-muddle-encrypt email="test@example.com" title="email" />
-<x-muddle-entities email="test@example.com" title="email" />
-<x-muddle-hex email="test@example.com" title="email" />
-<x-muddle-rotate email="test@example.com" title="email" />
-
-{{-- specific text strategy components --}}
-<x-muddle-text-random email="test@example.com" />
-<x-muddle-text-append email="test@example.com" />
-<x-muddle-text-concatenation email="test@example.com" />
-<x-muddle-text-display-none email="test@example.com" />
-<x-muddle-text-encrypt email="test@example.com" />
-<x-muddle-text-entities email="test@example.com" />
-<x-muddle-text-hex email="test@example.com" />
-<x-muddle-text-rotate email="test@example.com" />
 ```
 
 ## Testing
