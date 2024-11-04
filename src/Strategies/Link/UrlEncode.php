@@ -15,7 +15,7 @@ class UrlEncode implements LinkStrategy
     public function muddle(string $string, string $title): string
     {
         return sprintf(
-            '<a href="%s%s">%s</a>',
+            '<a href="%s%s" data-attributes>%s</a>',
             'mailto:',
             Str::urlEncode($string),
             $title,

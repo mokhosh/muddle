@@ -10,7 +10,7 @@ class Concatenation implements LinkStrategy
     {
         $concatenated = implode("'+'", str_split($string));
 
-        return "<script>document.write('<a href=\"mailto:'+'".$concatenated."'+'\">$title</a>');</script>";
+        return "<script>document.write('<a href=\"mailto:'+'".$concatenated."'+'\" data-attributes>$title</a>');</script>";
     }
 
     public function unmuddle(string $string): string

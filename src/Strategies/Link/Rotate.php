@@ -24,7 +24,7 @@ class Rotate implements LinkStrategy
         </script>
         HTML;
 
-        return "<a id='$id' href='$rotated'>".$title.$script;
+        return "<a id='$id' href='$rotated' data-attributes>".$title.$script;
     }
 
     public function unmuddle(string $string): string

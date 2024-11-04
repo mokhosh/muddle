@@ -18,7 +18,7 @@ class Append implements LinkStrategy
         })()</script>
         HTML;
 
-        return "<a id='$id' href='mailto:$username'>".$title.$script;
+        return "<a id='$id' href='mailto:$username' data-attributes>".$title.$script;
     }
 
     public function unmuddle(string $string): string

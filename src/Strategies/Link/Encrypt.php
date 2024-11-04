@@ -27,7 +27,7 @@ class Encrypt implements LinkStrategy
         </script>
         HTML;
 
-        return "<a id='$id' href='$encrypted'>".$title.$script;
+        return "<a id='$id' href='$encrypted' data-attributes>".$title.$script;
     }
 
     public function unmuddle(string $string): string

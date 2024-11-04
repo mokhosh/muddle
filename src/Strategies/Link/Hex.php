@@ -20,7 +20,7 @@ class Hex implements LinkStrategy
         })()</script>
         HTML;
 
-        return "<a id='$id' href='$hexed'>".$title.$script;
+        return "<a id='$id' href='$hexed' data-attributes>".$title.$script;
     }
 
     public function unmuddle(string $string): string

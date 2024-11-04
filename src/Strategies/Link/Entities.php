@@ -15,7 +15,7 @@ class Entities implements LinkStrategy
     public function muddle(string $string, ?string $title = null): string
     {
         return sprintf(
-            '<a href="%s%s">%s</a>',
+            '<a href="%s%s" data-attributes>%s</a>',
             Str::entitize('mailto:'),
             $entitized = Str::entitize($string),
             $title ?? $entitized,

@@ -14,7 +14,7 @@ class Plain implements LinkStrategy
     public function muddle(string $string, ?string $title = null): string
     {
         return sprintf(
-            '<a href="mailto:%s">%s</a>',
+            '<a href="mailto:%s" data-attributes>%s</a>',
             $string,
             $title ?? $string,
         );
