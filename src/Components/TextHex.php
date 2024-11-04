@@ -2,21 +2,13 @@
 
 namespace Mokhosh\Muddle\Components;
 
-use Closure;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
-use Mokhosh\Muddle\Facades\Muddle;
-use Mokhosh\Muddle\Strategies\Text\Hex;
+use Mokhosh\Muddle\Contracts\TextStrategy;
+use Mokhosh\Muddle\Strategies\Text;
 
-class TextHex extends Component
+class TextHex extends TextComponent
 {
-    public function __construct(
-        public string $email,
-    ) {}
-
-    public function render(): View|Htmlable|Closure|string
+    protected function strategy(): TextStrategy
     {
-        return Muddle::strategy(new Hex)->text($this->email);
+        return new Text\Hex;
     }
 }
