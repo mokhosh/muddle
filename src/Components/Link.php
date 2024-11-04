@@ -2,21 +2,13 @@
 
 namespace Mokhosh\Muddle\Components;
 
-use Closure;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Contracts\View\View;
-use Illuminate\View\Component;
-use Mokhosh\Muddle\Facades\Muddle;
+use Illuminate\Support\Facades\App;
+use Mokhosh\Muddle\Contracts\LinkStrategy;
 
-class Link extends Component
+class Link extends LinkComponent
 {
-    public function __construct(
-        public string $email,
-        public string $title,
-    ) {}
-
-    public function render(): View|Htmlable|Closure|string
+    protected function strategy(): LinkStrategy
     {
-        return Muddle::link($this->email, $this->title);
+        return App::make(LinkStrategy::class);
     }
 }
