@@ -14,12 +14,11 @@ class UrlEncode implements LinkStrategy
 {
     public function muddle(string $string, string $title): string
     {
-        return sprintf(
-            '<a href="%s%s" data-attributes>%s</a>',
-            'mailto:',
-            Str::urlEncode($string),
-            $title,
-        );
+        $encoded = Str::urlEncode($string);
+
+        return <<<HTML
+        <a href="mailto:$encoded" data-attributes>$title</a>
+        HTML;
     }
 
     public function unmuddle(string $string): string

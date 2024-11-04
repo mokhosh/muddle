@@ -11,13 +11,11 @@ use Mokhosh\Muddle\Contracts\LinkStrategy;
 #[Unsafe]
 class Plain implements LinkStrategy
 {
-    public function muddle(string $string, ?string $title = null): string
+    public function muddle(string $string, string $title): string
     {
-        return sprintf(
-            '<a href="mailto:%s" data-attributes>%s</a>',
-            $string,
-            $title ?? $string,
-        );
+        return <<<HTML
+        <a href="mailto:$string" data-attributes>$title</a>
+        HTML;
     }
 
     public function unmuddle(string $string): string

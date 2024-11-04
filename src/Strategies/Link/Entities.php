@@ -12,14 +12,13 @@ use Mokhosh\Muddle\Support\Str;
 #[Unsafe]
 class Entities implements LinkStrategy
 {
-    public function muddle(string $string, ?string $title = null): string
+    public function muddle(string $string, string $title): string
     {
-        return sprintf(
-            '<a href="%s%s" data-attributes>%s</a>',
-            Str::entitize('mailto:'),
-            $entitized = Str::entitize($string),
-            $title ?? $entitized,
-        );
+        $entitized = Str::entitize('mailto:'.$string);
+
+        return <<<HTML
+        <a href="$entitized" data-attributes>$title</a>
+        HTML;
     }
 
     public function unmuddle(string $string): string

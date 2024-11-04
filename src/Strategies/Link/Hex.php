@@ -12,23 +12,26 @@ class Hex implements LinkStrategy
         $id = Str::id();
         $key = random_int(0, 255);
         $hexed = Str::hex('mailto:'.$string, $key);
-        $script = <<<HTML
-        </a><script>(function() {
+
+        return <<<HTML
+        <a id="$id" href="$hexed" data-attributes>$title</a>
+        <script>(() => {
             const codes = $id.getAttribute('href').split(' ')
             $id.href = ''
             for (const code of codes) $id.href = $id.getAttribute('href') + String.fromCharCode(parseInt(code, 16) ^ $key)
         })()</script>
         HTML;
-
-        return "<a id='$id' href='$hexed' data-attributes>".$title.$script;
     }
 
     public function unmuddle(string $string): string
     {
         preg_match('/ \^ (\d+)/', $string, $key);
-        preg_match('/href=\'([^\']+)\'/', $string, $hexed);
+        preg_match('/href="([^"]+)"/', $string, $hexed);
         preg_match('/>([^<]+)<\/a>/', $string, $title);
+        $unhexed = Str::unhex($hexed[1], $key[1]);
 
-        return '<a href="'.Str::unhex($hexed[1], $key[1])."\">$title[1]</a>";
+        return <<<HTML
+        <a href="$unhexed">$title[1]</a>
+        HTML;
     }
 }
