@@ -24,9 +24,15 @@ composer require mokhosh/muddle
 In Laravel Projects:
 
 ```blade
+{{-- instead of giving your emails to spammers like this: --}}
+<a href="mailto:{{ $user->email }}">{{ $user->name }}</a>
+{{-- do this: --}}
+<x-muddle-link :email="$user->email" title="$user->name" />
+{{-- and we will confuscate the email in random ways to make it impossible for bots to steal your emails --}}
+
 {{-- default strategy components --}}
-<x-muddle-link email="test@example.com" title="email" />
-<x-muddle-text email="test@example.com" />
+<x-muddle-link email="test@example.com" title="email" /> {{-- muddled email link --}}
+<x-muddle-text email="test@example.com" /> {{-- muddled email text --}}
 
 {{-- specific link strategy components --}}
 <x-muddle-random email="test@example.com" title="email" />
