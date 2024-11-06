@@ -26,16 +26,18 @@ In Laravel Projects:
 ```blade
 {{-- instead of handing your emails to spammers like this: --}}
 <a href="mailto:{{ $user->email }}">{{ $user->name }}</a>
+
 {{-- do this: --}}
 <x-muddle-link :email="$user->email" :title="$user->name" />
+
 {{-- and we will confuscate the email in random ways to make it impossible for bots to steal your emails --}}
 
-{{-- default strategy components --}}
+{{-- default strategy components based on config --}}
 <x-muddle-link email="test@example.com" title="email" /> {{-- muddled email link --}}
 <x-muddle-text email="test@example.com" /> {{-- muddled email text --}}
 
 {{-- specific link strategy components --}}
-<x-muddle-random email="test@example.com" title="email" />
+<x-muddle-random email="test@example.com" title="email" /> {{-- picks a random strategy each time --}}
 <x-muddle-append email="test@example.com" title="email" />
 <x-muddle-concatenation email="test@example.com" title="email" />
 <x-muddle-encrypt email="test@example.com" title="email" />
@@ -44,7 +46,7 @@ In Laravel Projects:
 <x-muddle-rotate email="test@example.com" title="email" />
 
 {{-- specific text strategy components --}}
-<x-muddle-text-random email="test@example.com" />
+<x-muddle-text-random email="test@example.com" /> {{-- picks a random strategy each time --}}
 <x-muddle-text-append email="test@example.com" />
 <x-muddle-text-concatenation email="test@example.com" />
 <x-muddle-text-display-none email="test@example.com" />
@@ -59,16 +61,16 @@ use Mokhosh\Muddle\Facades\Muddle;
 use Mokhosh\Muddle\Strategies\Text;
 use Mokhosh\Muddle\Strategies\Link;
 
-// default strategy with facade
+// default strategy
 Muddle::text('test@example.com');
 Muddle::link('test@example.com');
 
-// specific strategy with facade
+// specific strategy
 Muddle::strategy(text: new Text\Encrypt)->text('test@example.com')
 Muddle::strategy(link: new Link\Encrypt)->link('test@example.com');
 ```
 
-In PHP Projects:
+In plain PHP Projects:
 
 ```php
 use Mokhosh\Muddle\Muddle;
