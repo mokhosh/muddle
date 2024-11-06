@@ -140,8 +140,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Mo Khosh](https://github.com/mokhosh)
-- [Spencer Mortensen](https://spencermortensen.com/articles/email-obfuscation)
-- [All Contributors](../../contributors)
+- [Joe Tannenbaum](https://github.com/joetannenbaum/obfuscate) for the inspiration.
+- [Spencer Mortensen](https://spencermortensen.com/articles/email-obfuscation) for the information.
 
 ## License
 
