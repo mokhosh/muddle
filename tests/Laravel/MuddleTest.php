@@ -32,3 +32,22 @@ it('can change strategies on the fly', function () {
         ->and(html_entity_decode($entitizedLink))
         ->toBe('<a href="mailto:test@example.com" data-attributes>email</a>');
 });
+
+it('muddles both email and title when email is also the title', function () {
+    Config::set('muddle.strategy.text', Text\Append::class);
+    Config::set('muddle.strategy.link', Link\Entities::class);
+
+    $email = 'test@example.com';
+    $title = 'test@example.com';
+
+    $muddledLink = Muddle::link($email, $title);
+    $muddledTitle = preg_replace('/^<a[^>]*>|<\/a>$/', '', $muddledLink);
+
+    expect($muddledLink)
+        ->not->toBe("<a href=\"mailto:{$email}\">{$title}</a>")
+        ->and((new Text\Append)->unmuddle($muddledTitle))
+        ->toBe($title)
+        ->and(html_entity_decode($muddledLink))
+        ->not->toBe("<a href=\"mailto:{$email}\" data-attributes>{$title}</a>")
+        ->toBe("<a href=\"mailto:{$email}\" data-attributes>{$muddledTitle}</a>");
+});
