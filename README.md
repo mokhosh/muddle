@@ -85,6 +85,11 @@ $muddle = new Muddle(
 $muddle->link('test@example.com');
 ```
 
+## Automatic Title Obfuscation
+
+When using the `link` method or component, if the `email` and `title` attributes are identical (for example, `<x-muddle-link email="test@example.com" title="test@example.com" />`), the title will be automatically obfuscated using the text strategy. This prevents the email from being exposed in plain text.
+Please note that this automatic behavior only applies for the default strategy. If you are using a specific strategy you will need to handle this scenario manually.
+
 ## Configuration
 
 You can publish the config file with:

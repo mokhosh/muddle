@@ -14,6 +14,10 @@ class Muddle
 
     public function link(string $email, string $title): string
     {
+        if ($email === $title) {
+            $title = $this->text($title);
+        }
+
         return $this->link->muddle($email, $title);
     }
 
